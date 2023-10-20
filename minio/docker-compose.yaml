@@ -1,0 +1,16 @@
+version: '3'
+services:
+  my-minio-container:
+    image: minio/minio
+    container_name: my-minio-container
+    environment:
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+    volumes:
+      - ./data:/data
+      - ./config:/root/.minio
+    ports:
+      - '9000:9000'
+      - '9090:9090'
+    command: server /data --console-address ":9090" -address ":9000"
+    restart: always

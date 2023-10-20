@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    my-mailhog-container:
+      image: mailhog/mailhog
+      container_name: my-mailhog-container
+      environment:
+        - MH_STORAGE=maildir
+      volumes:
+        - ./maildir:/maildir
+      ports:
+        - '1025:1025' # SMTP端口
+        - '8025:8025' # HTTP端口
+

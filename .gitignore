@@ -1,0 +1,10 @@
+keycloak/data-keycloak/
+
+mailhog/maildir/
+
+minio/data/
+
+mysql/data/
+
+nginx/data/
+nginx/logs/
